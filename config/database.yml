@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5 
+
+development:
+  <<: *default
+  database: liberrentcar_development
+  username: rocr
+  password: 123456
+  host: localhost
+
+test:
+  <<: *default
+  database: liberrentcar_test
+  username: rocr
+  password: 123456
+  host: localhost
+
+production:
+  <<: *default
+  database: liberrentcar_production
+  username: rocr
+  password: 123456
+  host: localhost
