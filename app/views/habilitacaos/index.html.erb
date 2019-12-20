@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Habilitacaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pessoa</th>
+      <th>Numero</th>
+      <th>Modalidade</th>
+      <th>Validade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @habilitacaos.each do |habilitacao| %>
+      <tr>
+        <td><%= habilitacao.pessoa_id %></td>
+        <td><%= habilitacao.numero %></td>
+        <td><%= habilitacao.modalidade %></td>
+        <td><%= habilitacao.validade %></td>
+        <td><%= link_to 'Show', habilitacao %></td>
+        <td><%= link_to 'Edit', edit_habilitacao_path(habilitacao) %></td>
+        <td><%= link_to 'Destroy', habilitacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Habilitacao', new_habilitacao_path %>

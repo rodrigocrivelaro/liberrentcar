@@ -1,0 +1,2 @@
+class TipoAuto < ApplicationRecord
+end

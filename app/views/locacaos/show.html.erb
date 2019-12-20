@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pessoa:</strong>
+  <%= @locacao.pessoa_id %>
+</p>
+
+<p>
+  <strong>Automovel:</strong>
+  <%= @locacao.automovel_id %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @locacao.valor %>
+</p>
+
+<p>
+  <strong>Dt inicio:</strong>
+  <%= @locacao.dt_inicio %>
+</p>
+
+<p>
+  <strong>Dt termino:</strong>
+  <%= @locacao.dt_termino %>
+</p>
+
+<p>
+  <strong>Dt retirada:</strong>
+  <%= @locacao.dt_retirada %>
+</p>
+
+<p>
+  <strong>Dt entrega:</strong>
+  <%= @locacao.dt_entrega %>
+</p>
+
+<%= link_to 'Edit', edit_locacao_path(@locacao) %> |
+<%= link_to 'Back', locacaos_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  modelo: MyString
+  cor: MyString
+  tipo_auto: one
+  placa: MyString
+  custo_diario: 9.99
+
+two:
+  modelo: MyString
+  cor: MyString
+  tipo_auto: two
+  placa: MyString
+  custo_diario: 9.99

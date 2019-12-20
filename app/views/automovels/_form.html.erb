@@ -1,0 +1,42 @@
+<%= form_with(model: automovel, local: true) do |form| %>
+  <% if automovel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(automovel.errors.count, "error") %> prohibited this automovel from being saved:</h2>
+
+      <ul>
+        <% automovel.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :modelo %>
+    <%= form.text_field :modelo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cor %>
+    <%= form.text_field :cor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo_auto_id %>
+    <%= form.text_field :tipo_auto_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :placa %>
+    <%= form.text_field :placa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :custo_diario %>
+    <%= form.text_field :custo_diario %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,52 @@
+<%= form_with(model: locacao, local: true) do |form| %>
+  <% if locacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(locacao.errors.count, "error") %> prohibited this locacao from being saved:</h2>
+
+      <ul>
+        <% locacao.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pessoa_id %>
+    <%= form.text_field :pessoa_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :automovel_id %>
+    <%= form.text_field :automovel_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor %>
+    <%= form.text_field :valor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dt_inicio %>
+    <%= form.datetime_select :dt_inicio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dt_termino %>
+    <%= form.datetime_select :dt_termino %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dt_retirada %>
+    <%= form.datetime_select :dt_retirada %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dt_entrega %>
+    <%= form.datetime_select :dt_entrega %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

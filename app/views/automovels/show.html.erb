@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @automovel.modelo %>
+</p>
+
+<p>
+  <strong>Cor:</strong>
+  <%= @automovel.cor %>
+</p>
+
+<p>
+  <strong>Tipo auto:</strong>
+  <%= @automovel.tipo_auto_id %>
+</p>
+
+<p>
+  <strong>Placa:</strong>
+  <%= @automovel.placa %>
+</p>
+
+<p>
+  <strong>Custo diario:</strong>
+  <%= @automovel.custo_diario %>
+</p>
+
+<%= link_to 'Edit', edit_automovel_path(@automovel) %> |
+<%= link_to 'Back', automovels_path %>

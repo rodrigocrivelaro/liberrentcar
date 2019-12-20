@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pessoa:</strong>
+  <%= @habilitacao.pessoa_id %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @habilitacao.numero %>
+</p>
+
+<p>
+  <strong>Modalidade:</strong>
+  <%= @habilitacao.modalidade %>
+</p>
+
+<p>
+  <strong>Validade:</strong>
+  <%= @habilitacao.validade %>
+</p>
+
+<%= link_to 'Edit', edit_habilitacao_path(@habilitacao) %> |
+<%= link_to 'Back', habilitacaos_path %>

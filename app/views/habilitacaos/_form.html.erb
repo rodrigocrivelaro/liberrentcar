@@ -1,0 +1,37 @@
+<%= form_with(model: habilitacao, local: true) do |form| %>
+  <% if habilitacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(habilitacao.errors.count, "error") %> prohibited this habilitacao from being saved:</h2>
+
+      <ul>
+        <% habilitacao.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pessoa_id %>
+    <%= form.text_field :pessoa_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero %>
+    <%= form.text_field :numero %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modalidade %>
+    <%= form.text_field :modalidade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :validade %>
+    <%= form.date_select :validade %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

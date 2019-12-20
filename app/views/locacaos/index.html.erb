@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Locacaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pessoa</th>
+      <th>Automovel</th>
+      <th>Valor</th>
+      <th>Dt inicio</th>
+      <th>Dt termino</th>
+      <th>Dt retirada</th>
+      <th>Dt entrega</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locacaos.each do |locacao| %>
+      <tr>
+        <td><%= locacao.pessoa_id %></td>
+        <td><%= locacao.automovel_id %></td>
+        <td><%= locacao.valor %></td>
+        <td><%= locacao.dt_inicio %></td>
+        <td><%= locacao.dt_termino %></td>
+        <td><%= locacao.dt_retirada %></td>
+        <td><%= locacao.dt_entrega %></td>
+        <td><%= link_to 'Show', locacao %></td>
+        <td><%= link_to 'Edit', edit_locacao_path(locacao) %></td>
+        <td><%= link_to 'Destroy', locacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Locacao', new_locacao_path %>
