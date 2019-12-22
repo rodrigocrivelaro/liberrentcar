@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :locacaos
   resources :automovels
   resources :tipo_autos
@@ -6,5 +8,4 @@ Rails.application.routes.draw do
   resources :telefones
   resources :tipo_telefones
   resources :pessoas
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

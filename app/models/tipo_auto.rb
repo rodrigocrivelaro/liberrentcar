@@ -1,2 +1,0 @@
-class TipoAuto < ApplicationRecord
-end

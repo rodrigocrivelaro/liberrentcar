@@ -1,4 +1,4 @@
 class Telefone < ApplicationRecord
+  enum tipo_telefone: [:comercial, :particular, :trabalho]
   belongs_to :pessoa
-  belongs_to :tipoTelefone
 end

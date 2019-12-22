@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_20_015349) do
+ActiveRecord::Schema.define(version: 2019_12_21_201008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,12 +18,11 @@ ActiveRecord::Schema.define(version: 2019_12_20_015349) do
   create_table "automovels", force: :cascade do |t|
     t.string "modelo"
     t.string "cor"
-    t.bigint "tipo_auto_id", null: false
+    t.integer "tipo_auto"
     t.string "placa"
-    t.decimal "custo_diario"
+    t.decimal "custo_diario", precision: 8, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["tipo_auto_id"], name: "index_automovels_on_tipo_auto_id"
   end
 
   create_table "habilitacaos", force: :cascade do |t|
@@ -39,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_015349) do
   create_table "locacaos", force: :cascade do |t|
     t.bigint "pessoa_id", null: false
     t.bigint "automovel_id", null: false
-    t.decimal "valor"
+    t.decimal "valor", precision: 8, scale: 2
     t.datetime "dt_inicio"
     t.datetime "dt_termino"
     t.datetime "dt_retirada"
@@ -61,32 +60,29 @@ ActiveRecord::Schema.define(version: 2019_12_20_015349) do
 
   create_table "telefones", force: :cascade do |t|
     t.bigint "pessoa_id", null: false
-    t.decimal "ddd"
+    t.string "ddd"
     t.string "numero"
-    t.bigint "tipo_telefone_id", null: false
+    t.integer "tipo_telefone"
     t.boolean "preferencial"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["pessoa_id"], name: "index_telefones_on_pessoa_id"
-    t.index ["tipo_telefone_id"], name: "index_telefones_on_tipo_telefone_id"
   end
 
-  create_table "tipo_autos", force: :cascade do |t|
-    t.string "nome"
+  create_table "users", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "tipo_telefones", force: :cascade do |t|
-    t.string "nome"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  add_foreign_key "automovels", "tipo_autos"
   add_foreign_key "habilitacaos", "pessoas"
   add_foreign_key "locacaos", "automovels"
   add_foreign_key "locacaos", "pessoas"
   add_foreign_key "telefones", "pessoas"
-  add_foreign_key "telefones", "tipo_telefones"
 end

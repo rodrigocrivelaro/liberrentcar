@@ -3,7 +3,7 @@ class CreateLocacaos < ActiveRecord::Migration[6.0]
     create_table :locacaos do |t|
       t.references :pessoa, null: false, foreign_key: true
       t.references :automovel, null: false, foreign_key: true
-      t.numeric :valor
+      t.decimal  :valor, :precision => 8, :scale => 2
       t.datetime :dt_inicio
       t.datetime :dt_termino
       t.datetime :dt_retirada

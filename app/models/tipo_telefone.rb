@@ -1,2 +1,0 @@
-class TipoTelefone < ApplicationRecord
-end

@@ -5,6 +5,7 @@ class TelefonesController < ApplicationController
   # GET /telefones.json
   def index
     @telefones = Telefone.all
+    # @pessoas = @telefones.Pessoa.find(:all, :order => 'nome')
   end
 
   # GET /telefones/1

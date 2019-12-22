@@ -3,9 +3,9 @@ class CreateAutomovels < ActiveRecord::Migration[6.0]
     create_table :automovels do |t|
       t.string :modelo
       t.string :cor
-      t.references :tipo_auto, null: false, foreign_key: true
+      t.integer :tipo_auto
       t.string :placa
-      t.decimal :custo_diario
+      t.decimal :custo_diario, :precision => 8, :scale => 2
 
       t.timestamps
     end

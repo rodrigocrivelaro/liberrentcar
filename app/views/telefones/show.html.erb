@@ -2,7 +2,8 @@
 
 <p>
   <strong>Pessoa:</strong>
-  <%= @telefone.pessoa_id %>
+  # <%= @telefone.pessoa_id %>
+  <%= @telefone.pessoa.nome %>
 </p>
 
 <p>
@@ -17,7 +18,7 @@
 
 <p>
   <strong>Tipotelefone:</strong>
-  <%= @telefone.tipoTelefone_id %>
+  <%= @telefone.tipo_telefone %>
 </p>
 
 <p>

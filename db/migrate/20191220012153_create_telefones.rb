@@ -2,9 +2,9 @@ class CreateTelefones < ActiveRecord::Migration[6.0]
   def change
     create_table :telefones do |t|
       t.references :pessoa, null: false, foreign_key: true
-      t.numeric :ddd
+      t.string :ddd
       t.string :numero
-      t.references :tipo_telefone, null: false, foreign_key: true
+      t.integer :tipo_telefone
       t.boolean :preferencial
 
       t.timestamps
